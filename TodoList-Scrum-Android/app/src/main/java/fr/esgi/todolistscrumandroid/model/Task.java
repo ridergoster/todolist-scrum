@@ -1,16 +1,28 @@
-package fr.esgi.todolistscrumandroid;
+package fr.esgi.todolistscrumandroid.model;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import io.realm.RealmObject;
 
 /**
  * Created by ozone on 28/02/2017.
  */
 
-public class Task {
+public class Task extends RealmObject{
+
+    private String id;
     private String title;
     private String description;
 
     public Task(String title, String description) {
         this.title = title;
         this.description = description;
+    }
+
+    protected Task(Parcel in) {
+        title = in.readString();
+        description = in.readString();
     }
 
     public String getTitle() {
@@ -28,4 +40,5 @@ public class Task {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

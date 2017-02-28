@@ -13,9 +13,14 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import fr.esgi.todolistscrumandroid.model.RealmController;
+import io.realm.Realm;
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvTaskList;
     //private Adapter adapter;
+
+    Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         rvTaskList.setLayoutManager(llm);
         /*adapter = new SMSListAdapter(, rvTaskList);
         rvTaskList.setAdapter(adapter);*/
+
         setUpGestureListener();
     }
 
