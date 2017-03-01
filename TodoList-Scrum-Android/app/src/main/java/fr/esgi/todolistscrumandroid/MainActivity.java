@@ -8,13 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-
+import fr.esgi.todolistscrumandroid.model.RealmController;
+import fr.esgi.todolistscrumandroid.model.Task;
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvTaskList;
@@ -37,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        readTask();
 
         rvTaskList = (RecyclerView) findViewById(R.id.rv_todo_list);
         rvTaskList.setHasFixedSize(true);
@@ -97,5 +102,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void readTask(){
+        RealmResults<Task> results = RealmController.getInstance(getApplicationContext()).getAllTask();
+        for(int i = 0; i < results.size(); ++i){
+            Log.d("ORM", results.get(i).getDescription());
+        }
     }
 }
