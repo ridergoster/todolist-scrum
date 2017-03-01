@@ -25,7 +25,7 @@ public class RealmController {
     private static RealmController instance;
     private final Realm realm;
 
-    public RealmController(Context context) {
+    private RealmController(Context context) {
         realm = Realm.getInstance(
                 new RealmConfiguration.Builder(context)
                         .name("task.realm")

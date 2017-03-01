@@ -11,9 +11,13 @@ import io.realm.RealmObject;
 
 public class Task extends RealmObject{
 
-    private String id;
+    private int id;
     private String title;
     private String description;
+
+    public Task() {
+
+    }
 
     public Task(String title, String description) {
         this.title = title;
@@ -21,6 +25,7 @@ public class Task extends RealmObject{
     }
 
     protected Task(Parcel in) {
+        id = in.readInt();
         title = in.readString();
         description = in.readString();
     }
@@ -41,4 +46,7 @@ public class Task extends RealmObject{
         this.description = description;
     }
 
+    public int getId() {
+        return id;
+    }
 }

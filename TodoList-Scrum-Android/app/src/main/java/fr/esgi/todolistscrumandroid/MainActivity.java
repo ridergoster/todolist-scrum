@@ -1,5 +1,6 @@
 package fr.esgi.todolistscrumandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.GestureDetectorCompat;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO faire l'ajout
+                Intent intent = new Intent(MainActivity.this, AddTaskActivity.class);
+                startActivity(intent);
             }
         });
 

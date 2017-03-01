@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import fr.esgi.todolistscrumandroid.model.Task;
+
 /**
  * Created by ozone on 28/02/2017.
  */
