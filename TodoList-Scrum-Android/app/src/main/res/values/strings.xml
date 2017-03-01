@@ -4,4 +4,5 @@
     <string name="desc">Description</string>
     <string name="title">Titre</string>
     <string name="fill_all_fields">"Veuillez remplir tous les champs"</string>
+    <string name="create_task">Créer la tâche</string>
 </resources>

@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
-import fr.esgi.todolistscrumandroid.model.RealmController;
 import io.realm.Realm;
 
 public class MainActivity extends AppCompatActivity {
